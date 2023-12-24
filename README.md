@@ -4,11 +4,11 @@
 -configured Tailwind
 
 # Features
--Login(signup page)
+-Login /signup Form
     -Sign in /Sign up Form
 -Browse (After Authentication)
-    -Header
-    -Main Movie
+    Header
+    Main Movie
         -trailer in bg
         -Title and Description
         -Movie Suggestions
