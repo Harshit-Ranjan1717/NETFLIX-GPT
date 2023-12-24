@@ -3,8 +3,18 @@
 - npm create vite@latest
 - configured Tailwind
 - Header
+- Routing
 - Login Form
 - Sign up Form
+- Form Validations
+- useRef Hook
+- Firebase Setup
+- deploying our app to production
+- Create Sign Up User Account
+- implement sign In user
+- cerated redux Store with userSlice
+
+
 
 # Features
 - Login /signup Form
@@ -21,5 +31,13 @@
 - Netflix Gpt
     - Search Bar
     - Movie Suggestions
+
+- Url
+    - https://my-netflix-gpt-292a9.web.app/
+- Commands:
+    - Install fireAbse CLI : npm install -g firebase-tools
+    - type: firebase login
+    - firebase init , then select Hosting
+    - firebase deploy
 
 
