@@ -1,8 +1,10 @@
+import Body from "./components/Body"
+
 const App=()=>{
   return (
-    <div className="text-3xl font-bold underline">
-      Namste Everyone lets Build Netflix
-    </div>
+      <Body>
+
+      </Body>
     )
 }
 
