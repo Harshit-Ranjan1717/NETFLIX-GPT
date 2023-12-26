@@ -21,6 +21,15 @@
 - Unsubscribed to the OnAuthStateChnage callback inside use Effect by using return
 - Register for TMDB API and get access token 
 - Get data from TMDB now playing Movie list
+- Custom hook for noew playing Movie
+- Update store with movies Data
+Planning For MainContainer and Second Conatiner
+- Fetch data from trailer video
+- Update store with trailer data
+- Embedded the video from youtube by making it autoplay and mute
+- Tailwind to use main Container awesome
+- TMDB IMG CDN
+- Mde browse page amazing
 
 
 
@@ -42,8 +51,7 @@
     - Search Bar
     - Movie Suggestions
 
-- Url
-    - https://my-netflix-gpt-292a9.web.app/
+
 - Commands:
     - Install fireAbse CLI : npm install -g firebase-tools
     - type: firebase login
