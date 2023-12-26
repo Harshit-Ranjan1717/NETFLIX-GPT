@@ -30,6 +30,9 @@ Planning For MainContainer and Second Conatiner
 - Tailwind to use main Container awesome
 - TMDB IMG CDN
 - Mde browse page amazing
+- GPT search Feature
+- (Big Feature)MultiLingual Features 
+- Integrate GPT APIs
 
 
 
