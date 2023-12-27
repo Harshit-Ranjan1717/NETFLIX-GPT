@@ -4,7 +4,7 @@ import { IMG_CDN_URL } from "../utils/contants";
 
 const MovieCard = ({ posterPath, details }) => {
 
-
+  if(!posterPath) return null;
   
   return (
     <>

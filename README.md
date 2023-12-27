@@ -31,7 +31,7 @@ Planning For MainContainer and Second Conatiner
 - TMDB IMG CDN
 - Mde browse page amazing
 - GPT search Feature
-- (Big Feature)MultiLingual Features 
+- (Big Feature) Multi Language Features 
 - Integrate GPT APIs
 
 
@@ -60,5 +60,6 @@ Planning For MainContainer and Second Conatiner
     - type: firebase login
     - firebase init , then select Hosting
     - firebase deploy
+
 
 
