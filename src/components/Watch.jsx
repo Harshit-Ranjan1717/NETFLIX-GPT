@@ -15,7 +15,6 @@ const Watch = () => {
     const trailerData = filterData.length ? filterData[0] : json.results[0];
     //.log(trailerData);
     setTrailer(trailerData);
-    setMovie(json);
   };
   useEffect(() => {
     getMovieVideos();
