@@ -5,23 +5,27 @@ import openai from "../utils/openAi";
 import { options } from "../utils/contants";
 import { addGptMovieResult } from "../utils/gptSlice";
 
-
 const GptSearchBar = () => {
   const langKey = useSelector((store) => store.config.lang);
 
-  const searchText=useRef(null)
-  const dispatch=useDispatch()
+  const searchText = useRef(null);
+  const dispatch = useDispatch();
 
   //search movie in tmdb
-  const  searchMovieTMDB=async (movie)=>{
-    const data=await fetch("https://api.themoviedb.org/3/search/movie?query="+movie+"&include_adult=false&language=en-US&page=1", options)
-    const json=await data.json();
-    console.log("json:"+json);
-    return json.results
-  }
+  const searchMovieTMDB = async (movie) => {
+    const data = await fetch(
+      "https://api.themoviedb.org/3/search/movie?query=" +
+        movie +
+        "&include_adult=false&language=en-US&page=1",
+      options
+    );
+    const json = await data.json();
+    //.log("json:"+json);
+    return json.results;
+  };
 
-  const handleGptSearchClick=async ()=>{
-    console.log(searchText.current.value);
+  const handleGptSearchClick = async () => {
+    //.log(searchText.current.value);
     // Make an API call to GPT API and get Movie Results
 
     const gptQuery =
@@ -34,22 +38,19 @@ const GptSearchBar = () => {
       model: "gpt-3.5-turbo",
     });
 
-    console.log(gptResults.choices[0]?.message?.content);
+    //.log(gptResults.choices[0]?.message?.content);
     //"Andaz Apna Apna, Chupke Chupke, Angoor, Jaane Bhi Do Yaaro, Padosan"
-    const gptMovies=gptResults.choices[0]?.message?.content.split(",")
-    //for each movie call search api 
+    const gptMovies = gptResults.choices[0]?.message?.content.split(",");
+    //for each movie call search api
 
-    const promiseArray=gptMovies.map(movie=>searchMovieTMDB(movie))
+    const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
 
-    const tmdbResults=await Promise.all(promiseArray)
-    
+    const tmdbResults = await Promise.all(promiseArray);
 
-    dispatch(addGptMovieResult({movieNames:gptMovies,movieResults:tmdbResults}))
-
-
-  }
-
-
+    dispatch(
+      addGptMovieResult({ movieNames: gptMovies, movieResults: tmdbResults })
+    );
+  };
 
   return (
     <div className="pt-[10%] flex justify-center ">
@@ -63,7 +64,10 @@ const GptSearchBar = () => {
           className="p-4 m-4 col-span-9 text-black font-semibold"
           placeholder={lang[langKey].gptSearchPlaceHolder}
         />
-        <button className="py-2 px-4 col-span-3 m-4 bg-red-700 rounded-md" onClick={handleGptSearchClick}>
+        <button
+          className="py-2 px-4 col-span-3 m-4 bg-red-700 rounded-md"
+          onClick={handleGptSearchClick}
+        >
           {lang[langKey].search}
         </button>
       </form>

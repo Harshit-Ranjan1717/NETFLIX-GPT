@@ -1,22 +1,23 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { auth } from "../utils/firebase";
 
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { USER_AVATAR } from "../utils/contants";
 
-
 const Login = () => {
-  
-  
   const [isSignInForm, setIsSignInForm] = useState(true);
 
   const [errorMessage, setErrorMessage] = useState(null);
-  const dispatch=useDispatch()
-  const name=useRef(null)
+  const dispatch = useDispatch();
+  const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
 
@@ -36,25 +37,28 @@ const Login = () => {
           const user = userCredential.user;
 
           updateProfile(user, {
-            displayName: name.current.value, photoURL:USER_AVATAR
-          }).then(() => {
-            // Profile updated!
-            const {uid,email,displayName,photoURL} = auth.currentUser;
-            dispatch(addUser({
-              uid:uid,
-              email:email,
-              displayName:displayName,
-              photoURL:photoURL
-            }))
+            displayName: name.current.value,
+            photoURL: USER_AVATAR,
+          })
+            .then(() => {
+              // Profile updated!
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
 
-            // navigate("/browse")
-            
-          }).catch((error) => {
-            // An error occurred
-            setErrorMessage(error.message)
-          });
-          // console.log(user);
-          
+              // navigate("/browse")
+            })
+            .catch((error) => {
+              // An error occurred
+              setErrorMessage(error.message);
+            });
+          // //.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -63,17 +67,20 @@ const Login = () => {
         });
     } else {
       //sign In
-      signInWithEmailAndPassword(auth,email.current.value, password.current.value)
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
         .then((userCredential) => {
           const user = userCredential.user;
-          // console.log(user);
+          // //.log(user);
           // navigate("/browse")
-         
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          setErrorMessage(errorCode+"-" +errorMessage)
+          setErrorMessage(errorCode + "-" + errorMessage);
         });
     }
   };
@@ -86,7 +93,7 @@ const Login = () => {
     <div>
       <Header></Header>
       <div className="absolute ">
-        <img 
+        <img
           src="https://assets.nflxext.com/ffe/siteui/vlv3/563192ea-ac0e-4906-a865-ba9899ffafad/6b2842d1-2339-4f08-84f6-148e9fcbe01b/IN-en-20231218-popsignuptwoweeks-perspective_alpha_website_large.jpg"
           alt="login"
         />
@@ -136,6 +143,5 @@ const Login = () => {
 };
 
 export default Login;
-
 
 // dankcoder17@gmail.com passowrd; Harshit@17
