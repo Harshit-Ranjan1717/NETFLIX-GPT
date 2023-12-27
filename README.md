@@ -33,6 +33,7 @@ Planning For MainContainer and Second Conatiner
 - GPT search Feature
 - (Big Feature) Multi Language Features 
 - Integrate GPT APIs
+- Did Memoization : reduced Api Calls
 
 
 

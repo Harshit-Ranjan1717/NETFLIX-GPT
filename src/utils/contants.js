@@ -5,11 +5,10 @@ export const options = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMGNjOTk5YTAwMGY4ZThlMzk5YmY0YjIxY2IyNTNlNiIsInN1YiI6IjY1OGE1ZjcyZGQyNTg5NzFhZTZiZjEzNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.8YK4eWXngvt2jyChxKwOuXzgtD8Tcxh9XXi4H7CT-Vo'
+      Authorization: 'Bearer ' + import.meta.env.VITE_TMDB_KEY
     }
   };
 
 export const IMG_CDN_URL="https://image.tmdb.org/t/p/w500"
 
-// export const OPEN_AI_KEY="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"
-export const OPEN_AI_KEY="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"
+export const OPEN_AI_KEY = import.meta.env.VITE_OPEN_AI_KEY;
