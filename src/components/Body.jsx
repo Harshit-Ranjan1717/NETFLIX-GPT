@@ -2,6 +2,7 @@ import Login from "./Login";
 import Browse from "./Browse";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
+import Watch from "./Watch";
 
 
 const Body = () => {
@@ -13,8 +14,17 @@ const Body = () => {
     {
       path: "/browse",
       element: <Browse></Browse>,
+ 
+    },
+    {
+      path: "/watch/:contentId",
+      element: <Watch />
     },
   ]);
+
+
+
+
 
   return (
     <div>
