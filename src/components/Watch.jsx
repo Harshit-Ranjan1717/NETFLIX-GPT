@@ -43,7 +43,7 @@ const Watch = () => {
           ></iframe>
         )}
       </div>
-      but
+    
     </>
   );
 };
