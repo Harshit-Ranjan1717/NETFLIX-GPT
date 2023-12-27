@@ -29,7 +29,7 @@ const Watch = () => {
     <>
         <div>
             <Link to="/browse">
-            <button className="py-2 px-4 mx-[700px] my-2 rounded-md bg-purple-700 z-40 absolute  "> GO TO HOME</button>
+            <button className="py-2 px-4 mx-[700px] my-2 rounded-md bg-purple-700 z-40 absolute  "> HOME</button>
             </Link> 
            
           
