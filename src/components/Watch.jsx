@@ -25,7 +25,7 @@ const Watch = () => {
     <>
       <div>
         <Link to="/browse">
-          <button className="py-2 px-4 mx-[700px] my-2 rounded-md bg-purple-700 z-40 absolute  ">
+          <button className="py-2 px-4 mx-[600px] my-2 rounded-md bg-purple-700 z-40 absolute  ">
             {" "}
             HOME
           </button>
@@ -33,7 +33,7 @@ const Watch = () => {
 
         {trailer && (
           <iframe
-            className="w-screen aspect-video"
+            className="w-screen  aspect-video"
             src={
               "https://www.youtube.com/embed/" + trailer?.key + "?autoplay=1"
             }
