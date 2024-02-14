@@ -9,7 +9,7 @@ const MovieCard = ({ posterPath, details }) => {
   
   return (
     <>
-    <Link className="w-36 md:w-48 pr-4 transform transition duration-500 ease-in-out hover:scale-110 " to={`/watch/${details.id}`}>
+    <Link className="w-48 pr-4 transform transition duration-500 ease-in-out hover:scale-110 " to={`/watch/${details.id}`}>
       <img
         
         src={IMG_CDN_URL + posterPath}
